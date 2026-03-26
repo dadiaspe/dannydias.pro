@@ -295,6 +295,107 @@
     #contact p { color: var(--muted); margin-bottom: 2rem; font-size: 0.97rem; }
     .social-row { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
 
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.75rem;
+    }
+
+    .video-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .video-card:hover {
+      border-color: rgba(0,212,255,0.35);
+      transform: translateY(-3px);
+    }
+
+    .video-thumb {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      background: #000;
+      overflow: hidden;
+      display: block;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .video-thumb img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      opacity: 0.85;
+    }
+    .video-thumb:hover img {
+      transform: scale(1.03);
+      opacity: 1;
+    }
+    .video-play-btn {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2;
+    }
+    .video-play-btn svg {
+      width: 64px;
+      height: 64px;
+      filter: drop-shadow(0 4px 16px rgba(0,0,0,0.6));
+      transition: transform 0.2s ease;
+    }
+    .video-thumb:hover .video-play-btn svg {
+      transform: scale(1.12);
+    }
+    .video-yt-badge {
+      position: absolute;
+      bottom: 10px;
+      right: 12px;
+      background: rgba(0,0,0,0.75);
+      border-radius: 4px;
+      padding: 3px 7px;
+      font-size: 0.68rem;
+      font-weight: 600;
+      color: #fff;
+      letter-spacing: 0.04em;
+      z-index: 2;
+    }
+
+    .video-meta {
+      padding: 1.25rem 1.5rem 1.5rem;
+    }
+    .video-meta .video-tag {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+    .video-meta h3 {
+      font-weight: 700;
+      font-size: 0.97rem;
+      color: var(--text);
+      line-height: 1.4;
+      letter-spacing: -0.01em;
+    }
+    .video-meta p {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-top: 0.4rem;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 680px) {
+      .video-grid { grid-template-columns: 1fr; }
+    }
+
     footer {
       position: relative;
       z-index: 1;
@@ -339,6 +440,7 @@
     </a>
     <ul class="nav-links">
       <li><a href="#focus">Focus</a></li>
+      <li><a href="#demos">Demos</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -368,7 +470,7 @@
       </p>
       <div class="hero-cta">
         <a href="https://www.linkedin.com/in/danny-dias-7a128512/" target="_blank" class="btn btn-primary">Connect on LinkedIn</a>
-       <a href="mailto:ing.diasdanny@gmail.com?subject=Let%27s%20Connect%20%E2%80%94%20AI%20%26%20Innovation" class="btn btn-ghost">Email Me</a>
+       <a href="/cdn-cgi/l/email-protection#caa3a4ade4aea3abb9aeaba4a4b38aada7aba3a6e4a9a5a7f5b9bfa8a0afa9bef786afbeeff8fdb9eff8fa89a5a4a4afa9beeff8faef8ff8eff2faeff3feeff8fa8b83eff8faeff8fceff8fa83a4a4a5bcabbea3a5a4" class="btn btn-ghost">Email Me</a>
       </div>
     </div>
   </section>
@@ -408,6 +510,52 @@
           <h3>Trilingual Professional</h3>
           <p>Fluent in English, Spanish, and Portuguese — enabling seamless collaboration across global enterprise teams and international financial institutions.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="demos">
+    <div class="section-wrap">
+      <p class="label reveal">Watch it in action</p>
+      <h2 class="reveal">Live demos.<br />Real enterprise AI.</h2>
+      <div class="video-grid reveal">
+
+        <div class="video-card">
+          <a class="video-thumb" href="https://youtu.be/jY9NskwGIzs" target="_blank" rel="noopener">
+            <img src="https://img.youtube.com/vi/jY9NskwGIzs/maxresdefault.jpg" alt="How to Build a Copilot AI Finance Agent" />
+            <div class="video-play-btn">
+              <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="40" cy="40" r="40" fill="rgba(0,0,0,0.55)"/>
+                <polygon points="32,24 60,40 32,56" fill="white"/>
+              </svg>
+            </div>
+            <span class="video-yt-badge">▶ Watch on YouTube</span>
+          </a>
+          <div class="video-meta">
+            <div class="video-tag">M365 Copilot · Finance Agent</div>
+            <h3>How to Build a Copilot AI Finance Agent</h3>
+            <p>Full demo & build tutorial using Microsoft 365 Copilot Agent Builder — covering AI security, workflow automation, and Copilot Pages for financial services.</p>
+          </div>
+        </div>
+
+        <div class="video-card">
+          <a class="video-thumb" href="https://youtu.be/m02uCPdKz2I" target="_blank" rel="noopener">
+            <img src="https://img.youtube.com/vi/m02uCPdKz2I/maxresdefault.jpg" alt="How to BUILD a Copilot Agent Chatbot in Microsoft Copilot Studio" />
+            <div class="video-play-btn">
+              <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="40" cy="40" r="40" fill="rgba(0,0,0,0.55)"/>
+                <polygon points="32,24 60,40 32,56" fill="white"/>
+              </svg>
+            </div>
+            <span class="video-yt-badge">▶ Watch on YouTube</span>
+          </a>
+          <div class="video-meta">
+            <div class="video-tag">Copilot Studio · Chatbot</div>
+            <h3>How to BUILD a Copilot Agent Chatbot in Copilot Studio</h3>
+            <p>Step-by-step walkthrough building an intelligent agent chatbot in Microsoft Copilot Studio — from configuration to enterprise deployment.</p>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -462,7 +610,7 @@
       <p class="reveal">Whether it's an AI strategy conversation, a demo collaboration, or connecting around M365 Copilot and Power Platform in Financial Services, Healthcare, or Retail.</p>
       <div class="social-row reveal">
         <a href="https://www.linkedin.com/in/danny-dias-7a128512/" target="_blank" class="btn btn-primary">LinkedIn</a>
-        <a href="mailto:ing.diasdanny@gmail.com?subject=Let%27s%20Connect%20%E2%80%94%20AI%20Strategy%20%26%20Microsoft%20Copilot" class="btn btn-ghost">Email Me</a>
+        <a href="/cdn-cgi/l/email-protection#1e777079307a777f6d7a7f7070675e79737f7772307d7173216d6b7c747b7d6a23527b6a3b2c296d3b2c2e5d7170707b7d6a3b2c2e3b5b2c3b262e3b272a3b2c2e5f573b2c2e4d6a6c7f6a7b79673b2c2e3b2c283b2c2e53777d6c716d71786a3b2c2e5d716e7772716a" class="btn btn-ghost">Email Me</a>
       </div>
     </div>
   </section>
@@ -474,15 +622,15 @@
 
   <script>
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          observer.unobserve(e.target);
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.08 });
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-  </script>
+    }, { threshold: 0.12 });
 
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
 </body>
 </html>
